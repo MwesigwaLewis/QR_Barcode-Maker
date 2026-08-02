@@ -5,22 +5,25 @@
 </head>
 <body>
 
+ {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages" id="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
 <form method="POST">
+
 <div class="container">
     <div class="container-header">
     QR & BARCODE GENERATOR
     </div>
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="flash-messages">
-                {% for message in messages %}
-                    <div class="flash-message">{{ message }}</div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
 
     <div class="selection-slider">
         
@@ -32,7 +35,7 @@
     </div>
 
 <div>
-<input type="text" placeholder="Text Goes Here" name="text-input">
+<input type="text" placeholder="Text Goes Here" name="text-input" maxlength="350">
 <button type="submit" value="GENERATE" class="button">
     GENERATE
 </button>
@@ -53,6 +56,16 @@
 
         action.value = index === 0 ? "qr_code" : "bar_code";
         }
+
+
+    const flashContainer = document.getElementById('flash-messages');
+    if (flashContainer) {
+        setTimeout(() => {
+            flashContainer.classList.add('fade-out');
+            setTimeout(() => flashContainer.remove(), 400); // wait for fade animation to finish
+        }, 3000);
+    }
+
 
 </script>
 </body>

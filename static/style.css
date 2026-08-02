@@ -161,28 +161,35 @@ form input[type='text']:focus{
 }
 
 .flash-messages{
-    width: calc(100% + 20px);
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+    flex-direction: row;
+    position:fixed;
+    
+    margin-top: -580px;
+    right: -10px;
+    align-items:flex-end;
+    gap: 8px;
+    z-index: 1000;
+    transition: opacity 0.4s ease;
+    min-width: fit-content;
+    width: 300px;
+}
+.flash-messages.fade-out{
+    opacity: 0;
 }
 .flash-message{
-    background: rgba(255, 60, 60, .35);
-    border: 1px solid rgba(255, 60, 60, .6);
+    position: absolute;
+    background: rgba(255, 60, 60, .85);
+    border: 1px solid rgba(255, 60, 60, 1);
     border-radius: 8px;
-    color: #ffe5e5;
+    color: #fff;
     font-size: 13px;
-    padding: 8px 14px;
-    margin: 4px 10px;
-    text-align: center;
+    padding: 10px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
+    width: fit-content;
 }
-.result-label{
-    margin-top: 40px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: aqua;
-}
+
 .result{
     display: flex;
     justify-self: center;
@@ -194,7 +201,7 @@ form input[type='text']:focus{
 }
 img{
     position: relative;
-    top: 5px;
+    top: 25px;
     left: 0px;
    
     max-width: 350px;
