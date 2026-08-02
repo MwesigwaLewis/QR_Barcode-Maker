@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>QR&Barcode Generator</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+
+<form method="POST">
+<div class="container">
+    <div class="container-header">
+    QR & BARCODE GENERATOR
+    </div>
+
+    <div class="selection-slider">
+        
+            <div class="slider-highlight"></div>
+            <input type="hidden" name="action" id="action" value="qr_code">
+            <button value="qr_code" name="action" type="button" class="option active" onclick="selectOption(0)">QR CODE</button>
+            <button value="bar_code" name="action" type="button" class="option" onclick="selectOption(1)">BAR CODE</button>
+      
+    </div>
+
+<div>
+<input type="text" placeholder="Text Goes Here" name="text-input">
+<button type="submit" value="GENERATE" class="button">
+    GENERATE
+</button>
+</div>
+</form>
+</div>
+
+<script>
+    const slider=document.querySelector(".slider-highlight");
+    const buttons=document.querySelectorAll(".option");
+    const action=document.getElementById("action");
+
+    function selectOption(index){
+        buttons.forEach(btn => btn.classList.remove("active"));
+        buttons[index].classList.add("active");
+
+        slider.style.transform = `translateX(${index * 100}%)`;
+
+        action.value = index === 0 ? "qr_code" : "bar_code";
+        }
+
+</script>
+</body>
+</html>

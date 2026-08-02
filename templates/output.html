@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>QR&Barcode Generator</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="container-header">
+    RESULT
+    </div>
+
+    <div class="result">
+       
+    </div>
+    <div class="result">
+    <!--    <img src="{{ url_for('static', filename='code.png') }}"> -->
+        <img src="/static/code.png">
+    </div>
+    <div class="button-container">
+<button
+    type="button"
+    onclick="window.location.href='/'"
+    value="BACK" 
+    class="back-button"
+    >
+    BACK
+</button>
+<a href="/download">
+<button class="back-button">DOWNLOAD</button>
+</a>
+    </div>
+
+</div>
+</body>
+</html>

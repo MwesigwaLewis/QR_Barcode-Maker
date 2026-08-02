@@ -1,0 +1,184 @@
+
+html,body{
+    background: radial-gradient(circle at center,purple, rgb(10, 10, 0));
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    user-select: none;
+}
+.container{
+    position: relative;
+    border-radius: 15px;
+    min-width: fit-content;
+    min-height: 150px;
+    height: auto;
+    padding: 0px 10px 0px 10px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(247, 37, 200, .3);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    overflow: hidden;
+}
+.container-header{
+    position: absolute;
+    top: 0px;
+    background: blue;
+
+    width: calc(100% + 20px);
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    color: aqua;
+}
+
+
+.selection-slider{
+    display: flex;
+    overflow: visible;
+    position: relative;
+    width: calc(100% + 20px);
+    top: 10px;
+    height: 40px;
+  
+    padding: 2px 0px 2px 0px;
+    background: rgba(11, 17, 140, .3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease;
+}
+
+.slider-highlight{
+    position: absolute;
+    margin-top: -2px;
+
+    width: 50%;
+    height: 100%;
+    
+
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+
+    transition: transform .3s ease;
+
+    z-index: 1;
+}
+.option{
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: rgb(129, 31, 129);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.selection-slider button{
+    position: relative;
+    height: 35px;
+    flex: 1;
+    outline: none;
+    border: solid 0px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 10px;
+    padding: 8px;
+    margin: 2 3px 0px 3px;
+}
+.selection-slider button:hover{
+
+    font-weight: bold;
+    transition: .2s ease-in-out;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.selection-slider button:active{
+    background: rgb(150, 150, 192);
+   
+}
+
+form{
+    position: relative;
+    top: 15px;
+   
+}
+
+form input[type='text']{
+    padding: 0 10px;
+    border-radius: 5px;
+    border: rgb(0, 255, 102) .1px solid;
+    outline: none;
+    background: transparent;
+    margin: 0 0 0 0;
+    width: 250px;
+    height: 30px;
+    color: rgba(243, 243, 5, 0.61);
+    letter-spacing: 1.01;
+    
+}
+form input[type='text']:focus{
+    border-color: blue;
+    transition: .4s ease-in-out;
+}
+
+
+.button{
+    margin-top: 20px;
+    background:linear-gradient(to right,purple,blue);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    width: 150px;
+    cursor: pointer;
+    border: solid 0.02px rgb(89, 177, 22);
+    border-radius: 12px;
+    color: green;
+}
+.button:hover{
+    background: linear-gradient(to left, purple,blue);
+    color: rgb(13, 196, 46);
+}
+.back-button{
+    margin-top: 35px;
+    margin-bottom: 5px;
+    background:linear-gradient(to right,purple,blue);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    width: 150px;
+    cursor: pointer;
+    border: solid 0.02px rgb(89, 177, 22);
+    border-radius: 12px;
+    color: green;
+}
+.back-button:hover{
+    background: linear-gradient(to left, purple,blue);
+    color: rgb(13, 196, 46);
+}
+
+
+.result{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: fit-content;
+    width: fit-content;
+    
+    
+}
+img{
+    position: relative;
+    top: 25px;
+    left: 0px;
+   
+    max-width: 350px;
+    max-height: 350px;
+    margin: 20px 0 0 0;
+    padding: 0px;
+}
+
