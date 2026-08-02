@@ -67,13 +67,9 @@ def make_barcode():
 
 @app.route('/output')
 def output():
-<<<<<<< HEAD
       filename= session.get('code_filename')
 
       if not filename:
-=======
-      if not session.get('bar_created') or session.get('qr_created'):
->>>>>>> 9467b2f356157dfa4c5466df15a333f4a6255a95
            return redirect(url_for('code_creation'))
       return render_template('output.html', filename=filename)
 
@@ -89,14 +85,7 @@ def download():
      )
 
 if __name__=="__main__":
-<<<<<<< HEAD
     app.run(debug=True,
             host='0.0.0.0',
             port='5600'
     )
-=======
-      app.run(debug=True,
-              host='0.0.0.0',
-              port='5600'
-        )
->>>>>>> 9467b2f356157dfa4c5466df15a333f4a6255a95
