@@ -194,7 +194,7 @@ form input[type='text']:focus{
 }
 img{
     position: relative;
-    top: 25px;
+    top: 5px;
     left: 0px;
    
     max-width: 350px;
