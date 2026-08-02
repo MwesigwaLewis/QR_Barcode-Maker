@@ -58,7 +58,7 @@ def make_barcode():
 
 @app.route('/output')
 def output():
-      if not session.get('bar_created') or not session.get('qr_created'):
+      if not session.get('bar_created') or session.get('qr_created'):
            return redirect(url_for('code_creation'))
       return render_template('output.html')
 
