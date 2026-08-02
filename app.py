@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for,session,send_file,flash
+from flask import Flask,render_template,request,redirect,url_for,session,send_file,flash,Response
 import barcode
 from barcode.writer import ImageWriter
 from barcode.codex import Code128
@@ -97,6 +97,21 @@ def download():
         as_attachment=True,
         download_name="Your_Code.png"
      )
+
+
+@app.route('/robots.txt')
+def robots():
+    return Response("User-agent: *\nAllow: /\nSitemap: https://code-maker.centralhub.space/sitemap.xml", mimetype='text/plain')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://code-maker.centralhub.space/</loc>
+  </url>
+</urlset>'''
+    return Response(xml, mimetype='application/xml')
 
 if __name__=="__main__":
       app.run(debug=False,
