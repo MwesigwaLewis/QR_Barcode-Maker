@@ -19,6 +19,7 @@
         {% endif %}
     {% endwith %}
 
+<div class="content">    
 <form method="POST">
 
 <div class="container">
@@ -43,8 +44,20 @@
 </button>
 </div>
 </form>
+
+</div>
+<div class="below-container">
+    <p>Create QR codes and barcodes for free in seconds.</p>
+    <p>Just Follow these simple steps;</p>
+        <ol>
+            <li>Paste your text or link above</li>
+            <li>Choose QR Code or Bar Code</li>
+            <li>Download the image instantly</li>
+        </ol>
+    
 </div>
 
+</div>
 <script>
     const slider=document.querySelector(".slider-highlight");
     const buttons=document.querySelectorAll(".option");
@@ -69,6 +82,16 @@
     }
 
 
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR & Barcode Generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0"}
+}
 </script>
 </body>
 </html>

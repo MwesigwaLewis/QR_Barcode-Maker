@@ -7,6 +7,7 @@ html,body{
     min-width: 100vw;
     user-select: none;
 }
+
 .container{
     position: relative;
     border-radius: 15px;
@@ -39,7 +40,13 @@ html,body{
     color: aqua;
 }
 
-
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
 .selection-slider{
     display: flex;
     overflow: visible;
@@ -190,6 +197,64 @@ form input[type='text']:focus{
     width: fit-content;
 }
 
+.below-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 450px;
+    top: 15px;
+    text-align: center;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(247, 37, 200, .15);
+}
+
+.below-container p{
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.below-container ol{
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.below-container ol li{
+    counter-increment: step;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+.below-container ol li::before{
+    content: counter(step);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(to right, purple, blue);
+    color: aqua;
+    font-weight: 800;
+    font-size: 12px;
+}
 .result{
     display: flex;
     justify-self: center;
