@@ -14,7 +14,7 @@
     </div>
     <div class="result">
     <!--    <img src="{{ url_for('static', filename='code.png') }}"> -->
-        <img src="/static/code.png">
+        <img src="{{ url_for('static', filename='generated/' ~ filename) }}">
     </div>
     <div class="button-container">
 <button
