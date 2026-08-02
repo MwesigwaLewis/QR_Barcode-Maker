@@ -70,7 +70,8 @@ def download():
         download_name="Your_Code.png"
      )
 
-app.run(debug=True,
-        host='0.0.0.0',
-        port='5600'
+if __name__=="main":
+      app.run(debug=True,
+              host='0.0.0.0',
+              port='5600'
         )
