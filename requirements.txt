@@ -2,3 +2,4 @@ Flask
 qrcode
 python-barcode
 Pillow
+gunicorn
