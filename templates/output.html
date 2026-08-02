@@ -9,11 +9,14 @@
     RESULT
     </div>
 
-    <div class="result">
-       
+    <div class="result-label">
+        {% if code_type == 'barcode' %}
+            Your Barcode
+        {% else %}
+            Your QR Code
+        {% endif %}
     </div>
     <div class="result">
-    <!--    <img src="{{ url_for('static', filename='code.png') }}"> -->
         <img src="{{ url_for('static', filename='generated/' ~ filename) }}">
     </div>
     <div class="button-container">
