@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>QR & Barcode Generator - Free Online Tool</title>
+<meta name="description" content="Generate QR codes and barcodes instantly for free. No signup required.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+ {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages" id="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+<div class="content">    
+<form method="POST">
+
+<div class="container">
+    <div class="container-header">
+    QR & BARCODE GENERATOR
+    </div>
+
+
+    <div class="selection-slider">
+        
+            <div class="slider-highlight"></div>
+            <input type="hidden" name="action" id="action" value="qr_code">
+            <button value="qr_code" name="action" type="button" class="option active" onclick="selectOption(0)">QR CODE</button>
+            <button value="bar_code" name="action" type="button" class="option" onclick="selectOption(1)">BAR CODE</button>
+      
+    </div>
+
+<div>
+<input type="text" placeholder="Text Goes Here" name="text-input" maxlength="550">
+<button type="submit" value="GENERATE" class="button">
+    GENERATE
+</button>
+</div>
+</form>
+
+</div>
+<div class="below-container">
+    <p>Create QR codes and barcodes for free in seconds.</p>
+    <p>Just Follow these simple steps;</p>
+        <ol>
+            <li>Paste your text or link in the input field</li>
+            <li>Choose QR Code or Bar Code</li>
+            <li>Download the image instantly</li>
+        </ol>
+    
+</div>
+
+</div>
+<script>
+    const slider=document.querySelector(".slider-highlight");
+    const buttons=document.querySelectorAll(".option");
+    const action=document.getElementById("action");
+
+    function selectOption(index){
+        buttons.forEach(btn => btn.classList.remove("active"));
+        buttons[index].classList.add("active");
+
+        slider.style.transform = `translateX(${index * 100}%)`;
+
+        action.value = index === 0 ? "qr_code" : "bar_code";
+        }
+
+
+    const flashContainer = document.getElementById('flash-messages');
+    if (flashContainer) {
+        setTimeout(() => {
+            flashContainer.classList.add('fade-out');
+            setTimeout(() => flashContainer.remove(), 400); // wait for fade animation to finish
+        }, 3000);
+    }
+
+
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR & Barcode Generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0"}
+}
+</script>
+</body>
+</html>

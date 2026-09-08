@@ -1,0 +1,292 @@
+:root{
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;
+    background:#080612
+}
+*{
+    box-sizing:border-box
+}
+html,body{
+    margin:0;
+    min-height:100%;
+    min-width:100%;
+    background:radial-gradient(circle at 20% 10%,#5b1aa8 0,#554b7a 34%,#282626 100%);
+}
+body{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    padding:24px;
+    user-select:none
+}
+.content{
+    width:min(100%,760px);
+    display:grid;
+    gap:18px
+}
+.container{
+    display:flex;
+    flex-direction:column;
+    gap:0px;
+    width:100%;
+    border:1px solid rgba(255, 0, 0, 0.14);
+    border-radius:24px;
+    padding:28px;
+    background:rgba(255,255,255,.09);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 24px 70px rgba(0,0,0,.35);
+    overflow:hidden
+}
+.container-header{
+    font-size:clamp(20px,4vw,30px);
+    font-weight:900;
+    letter-spacing:.08em;
+    text-align:center;
+    margin-bottom:24px
+}
+.selection-slider{
+    display:flex;
+    position:relative;
+    width:100%;
+    min-height:48px;
+    padding:4px;
+    border-radius:14px;
+    background:rgba(0,0,0,.22);
+    overflow:hidden
+}
+.slider-highlight{
+    position:absolute;
+    inset:4px auto 4px 4px;
+    width:calc(50% - 4px);
+    border-radius:11px;
+    background:rgba(255,255,255,.17);
+    transition:transform .25s ease;
+    z-index:0
+}
+.option{
+    position:relative;
+    z-index:1;
+    flex:1;
+    min-width:0;
+    border:0;
+    background:transparent;
+    color:rgba(255,255,255,.65);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.04em;
+    border-radius:11px;
+    cursor:pointer;
+    padding:12px
+}
+.option.active{
+    color:#fff
+}
+.option:hover{
+    color:#fff
+}
+form{
+    display:grid;
+    gap:16px;
+    margin-top:22px
+}
+form input[type=text]{
+    width:100%;
+    height:50px;
+    padding:0 16px;
+    border:0.5px solid rgba(255,255,255,.18);
+    border-radius:13px;
+    outline:none;
+    background:rgba(0,0,0,.2);
+    color:#fff;
+    font-size:16px;
+    letter-spacing:.01em;
+    margin:1px 0 8px 0;
+}
+form input[type=text]::placeholder{
+    color:rgba(255,255,255,.42)
+}
+form input[type=text]:focus{
+    border-color:rgba(160,100,255,.9);
+    box-shadow:0 0 0 4px rgba(124,58,237,.15)
+}
+.button{display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    width:100%;
+    padding:0 22px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    color:#fff;
+    font-weight:900;
+    letter-spacing:.04em;
+    text-decoration:none;
+    cursor:pointer;
+    transition:transform .18s ease,filter .18s ease;
+    box-shadow:0 10px 25px rgba(37,99,235,.22)
+}
+
+.back-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 22px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    color:#fff;
+    font-weight:900;
+    letter-spacing:.04em;
+    text-decoration:none;
+    cursor:pointer;
+    transition:transform .18s ease,filter .18s ease;
+    box-shadow:0 10px 25px rgba(37,99,235,.22)
+}
+.button:hover,.back-button:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.08)
+}
+.below-container{
+    width:100%;
+    padding:20px 22px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(15px)
+}
+.below-container p{
+    margin:0 0 8px;
+    text-align:center;
+    color:rgba(255,255,255,.82)
+}
+.below-container ol{
+    list-style:none;
+    counter-reset:step;
+    padding:0;
+    margin:14px 0 0;
+    display:grid;
+    gap:9px
+}
+.below-container li{
+    counter-increment:step;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.05);
+    color:rgba(255,255,255,.76);
+    font-size:14px
+}
+.below-container li:before{
+    content:counter(step);
+    display:grid;
+    place-items:center;
+    width:24px;
+    height:24px;
+    flex:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    font-size:12px;
+    font-weight:900
+}
+.flash-messages{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:1000;
+    max-width:min(380px,calc(100vw - 36px));
+    transition:opacity .4s
+}
+.flash-messages.fade-out{
+    opacity:0
+}
+.flash-message{
+    padding:13px 16px;
+    border:1px solid rgba(255,100,100,.4);
+    border-radius:12px;
+    background:rgba(150,20,40,.9);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    font-size:14px
+}
+.result{
+    display:flex;
+   justify-content:center;
+   align-items:center;
+   min-height:220px;
+   padding:18px;
+   background:rgba(0,0,0,.16);
+   border-radius:18px
+}
+.result img{
+   display:block;
+   max-width:100%;
+   max-height:min(58vh,520px);
+   width:auto;
+   height:auto;
+   object-fit:contain;
+   border-radius:8px;
+   background:#fff;
+   padding:10px
+}
+.button-container{
+   display:flex;
+   justify-content:center;
+   gap:12px;
+   flex-wrap:wrap;
+   margin-top:20px
+}
+@media (max-width:600px){
+   body{
+      padding:14px
+   }
+   .container{
+      padding:20px;
+      border-radius:19px
+   }
+   .container-header{
+      margin-bottom:18px
+   }
+   .option{
+      font-size:12px;
+      padding:10px
+   }
+   form input[type=text]{
+      height:48px
+   }
+   .below-container{
+      padding:16px
+   }
+   .result{
+      min-height:160px
+   }
+   .button,.back-button{
+      width:100%
+   }
+   .button-container{
+      display:grid;
+      grid-template-columns:1fr
+   }
+}
+@media (max-width:360px){
+    body{
+        padding:10px
+    }
+    .container{
+        padding:15px
+    }
+    .selection-slider{
+        min-height:44px
+    }
+    .option{
+        font-size:11px
+    }
+}
+@media (prefers-reduced-motion:reduce){
+    *{
+        scroll-behavior:auto!important;
+        transition:none!important
+    }
+}
