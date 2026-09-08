@@ -101,7 +101,15 @@ def download():
 
 @app.route('/robots.txt')
 def robots():
-    return Response("User-agent: *\nAllow: /\nSitemap: https://code-maker.centralhub.space/sitemap.xml", mimetype='text/plain')
+    return Response(
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /output\n"
+        "Disallow: /download\n"
+        "Sitemap: https://code-maker.centralhub.space/sitemap.xml\n",
+        mimetype='text/plain'
+    )
+
 
 @app.route('/sitemap.xml')
 def sitemap():
@@ -114,7 +122,7 @@ def sitemap():
     return Response(xml, mimetype='application/xml')
 
 if __name__=="__main__":
-      app.run(debug=False,
+      app.run(debug=True,
               host='0.0.0.0',
               port='5600'
         )

@@ -1,9 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>QR & Barcode Generator - Free Online Tool</title>
-<meta name="description" content="Generate QR codes and barcodes instantly for free. No signup required.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+
+    <title>Free QR Code Generator & Barcode Generator | CodeMaker</title>
+
+    <meta name="description"
+          content="Create free QR codes and Code 128 barcodes online instantly. No signup required. Generate, download, and share your QR codes and barcodes in seconds.">
+
+    <meta name="keywords"
+          content="QR Code Generator, QR Code Maker, QR Generator, Barcode Generator, Barcode Maker, Code 128 Barcode Generator, Free QR Code Generator, Free Barcode Generator, QR & Barcode Generator, Lewis CodeMaker, CodeMaker, QR Code Generator Online, Barcode Generator Online, QR Code Generator Free, Barcode Generator Free, QR Code Creator, Barcode Creator, QR Code Generator No Signup, Barcode Generator No Signup, QR Code Generator Instant, Barcode Generator Instant, QR Code Generator Download, Barcode Generator Download, QR Code Generator Share, Barcode Generator Share, QR Code Generator Create, Barcode Generator Create, QR Code Generator Tool, Barcode Generator Tool, QR Code Generator App, Barcode Generator App, QR Code Generator Software, Barcode Generator Software, QR Code Generator Website, Barcode Generator Website, QR Code Generator Platform, Barcode Generator Platform, QR Code Generator Service, Barcode Generator Service, QR Code Generator Solution, Barcode Generator Solution, QR Code Generator Application, Barcode Generator Application, QR Code Generator Program, Barcode Generator Program, QR Code Generator System, Barcode Generator System, QR Code Generator Technology, Barcode Generator Technology, QR Code Generator Resource, Barcode Generator Resource, QR Code Generator Utility, Barcode Generator Utility, QR Code Generator Function, Barcode Generator Function, QR Code Generator Feature, Barcode Generator Feature, QR Code Generator Capability, Barcode Generator Capability, QR Code Generator Option, Barcode Generator Option, QR Code Generator Choice, Barcode Generator Choice, QR Code Generator Selection, Barcode Generator Selection, QR Code Generator Alternative, Barcode Generator Alternative, QR Code Generator Variation, Barcode Generator Variation, QR Code Generator Version, Barcode Generator Version, Free QR Code Generator, Free Barcode Generator, QR Code Generator Free, Barcode Generator Free, QR Code Generator Online, Barcode Generator Online, QR Code Generator Instant, Barcode Generator Instant, QR Code Generator Download, Barcode Generator Download, QR Code Generator Share, Barcode Generator Share, QR Code Generator Create, Barcode Generator Create, QR Code Generator Tool, Barcode Generator Tool, QR Code Generator App, Barcode Generator App, QR Code Generator Software, Barcode Generator Software, QR Code Generator Website, Barcode Generator Website">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://code-maker.centralhub.space/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free QR Code Generator & Barcode Generator | CodeMaker">
+    <meta property="og:description"
+          content="Generate QR codes and Code 128 barcodes instantly for free. No signup required.">
+    <meta property="og:url" content="https://code-maker.centralhub.space/">
+    <meta property="og:site_name" content="CodeMaker">
+    <meta property="og:image" content="https://code-maker.centralhub.space/static/og-image.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free QR Code Generator & Barcode Generator | CodeMaker">
+    <meta name="twitter:description"
+          content="Create QR codes and barcodes online for free with CodeMaker.">
+    <meta name="twitter:image" content="https://code-maker.centralhub.space/static/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -24,7 +58,7 @@
 
 <div class="container">
     <div class="container-header">
-    QR & BARCODE GENERATOR
+        <h1>QR & Barcode Generator</h1>
     </div>
 
 
@@ -38,7 +72,19 @@
     </div>
 
 <div>
-<input type="text" placeholder="Text Goes Here" name="text-input" maxlength="550">
+<label for="text-input" class="sr-only">
+    Enter text or URL to generate a QR code or barcode
+</label>
+
+<input
+    id="text-input"
+    type="text"
+    placeholder="Enter text or URL"
+    name="text-input"
+    maxlength="550"
+    aria-label="Text or URL to encode"
+    required
+>
 <button type="submit" value="GENERATE" class="button">
     GENERATE
 </button>
@@ -47,14 +93,43 @@
 
 </div>
 <div class="below-container">
-    <p>Create QR codes and barcodes for free in seconds.</p>
-    <p>Just Follow these simple steps;</p>
-        <ol>
-            <li>Paste your text or link in the input field</li>
-            <li>Choose QR Code or Bar Code</li>
-            <li>Download the image instantly</li>
-        </ol>
-    
+    <div class="sr-only">
+    <h2>Free QR Code Generator</h2>
+
+    <p>
+        Create QR codes online for free with CodeMaker.
+        Enter a website URL, text, contact information, or other content
+        and generate a QR code instantly.
+    </p>
+
+    <h2>Free Barcode Generator</h2>
+
+    <p>
+        Generate Code 128 barcodes quickly and easily.
+        Enter your text and download your barcode image instantly.
+        No registration or signup is required.
+    </p>
+    </div>
+
+    <h2>How to Create a QR Code or Barcode</h2>
+
+    <ol>
+        <li>Enter your text, number, or URL in the input field.</li>
+        <li>Choose QR Code or Barcode.</li>
+        <li>Click Generate.</li>
+        <li>Download your generated image.</li>
+    </ol>
+
+    <h2>Why Use CodeMaker?</h2>
+
+    <ul>
+        <li>Free QR code generation</li>
+        <li>Free Code 128 barcode generation</li>
+        <li>No account required</li>
+        <li>Fast online generation</li>
+        <li>Instantly download your generated code as an image</li>
+    </ul>
+
 </div>
 
 </div>
@@ -85,12 +160,27 @@
 </script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "QR & Barcode Generator",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": {"@type": "Offer", "price": "0"}
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CodeMaker",
+    "alternateName": "QR & Barcode Generator",
+    "url": "https://code-maker.centralhub.space/",
+    "description": "Free online QR code and Code 128 barcode generator.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "featureList": [
+        "QR Code Generator",
+        "QR Code Maker",
+        "Barcode Generator",
+        "Code 128 Barcode Generator",
+        "Download generated QR codes",
+        "Download generated barcodes"
+    ]
 }
 </script>
 </body>

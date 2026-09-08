@@ -1,33 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>QR&Barcode Generator</title>
-<link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+
+    <title>Your QR Code or Barcode | CodeMaker</title>
+
+    <meta name="description"
+          content="Your generated QR code or barcode is ready to download.">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    
 <div class="container">
+
     <div class="container-header">
-    RESULT
+        <h1>Your Generated Code</h1>
     </div>
 
     <div class="result">
-        <img src="{{ url_for('static', filename='generated/' ~ filename) }}">
+        <img
+            src="{{ url_for('static', filename='generated/' ~ filename) }}"
+            alt="Generated {{ 'QR code' if code_type == 'qr' else 'Code 128 barcode' }}"
+        >
     </div>
+
     <div class="button-container">
-<button
-    type="button"
-    onclick="window.location.href='/'"
-    value="BACK" 
-    class="back-button"
-    >
-    BACK
-</button>
-<a href="/download">
-<button class="back-button">DOWNLOAD</button>
-</a>
+
+        <button
+            type="button"
+            onclick="window.location.href='/'"
+            class="back-button">
+            BACK
+        </button>
+
+        <a href="{{ url_for('download') }}">
+            <button type="button" class="back-button">
+                DOWNLOAD
+            </button>
+        </a>
+
     </div>
 
 </div>
+
 </body>
 </html>
